@@ -39,8 +39,6 @@ sqlalchemy
 async-lru==2.0.2
 
 # Web Server
-Flask
-gunicorn
 itsdangerous
 
 # Utilities
