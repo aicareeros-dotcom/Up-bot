@@ -1,3 +1,18 @@
+from flask import Flask
+from threading import Thread
+import os
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Bot is Live ✅"
+
+def run_web():
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 10000))
+    )
 import asyncio
 
 try:
@@ -1321,6 +1336,9 @@ async def back_to_start_callback(client, callback_query: CallbackQuery):
             ]
         ])
     )
+
+Thread(target=run_web, 
+daemon=True).start()
 
 print("Bot Started...")
 bot.run()
