@@ -39,7 +39,8 @@ sqlalchemy
 async-lru==2.0.2
 
 # Web Server
-
+flask
+gunicorn
 
 # Utilities
 pytz
